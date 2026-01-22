@@ -1,0 +1,42 @@
+Файл bank.py
+class BankAccount:
+	def __init__(self,owner_name):
+		self.name = owner_name
+		self.balance = 0
+		history = []
+
+	def deposit(self,amount):
+		if amont < 0:
+			print(‘Неверная сумма’)
+		else:
+			self.history.append({‘Пополнение’: amount})
+			self.balance +=amount
+
+	def withdraw(self,amount):
+		if self.balance < amount:
+			print(‘Недостаточно средств’)
+		else:
+			self.balance -= amount
+			self.history.append(‘Снятие’: amount)
+
+
+	def info(self):
+		print(f‘Имя {self.name} баланс {self.balance}’)
+	
+	def get_history(self):
+		for type, amount in self.history:
+			print(f‘\nТип операции {type} на сумму {amount}\n’)
+
+файл main.py
+from bank import BankAccount
+
+cat = BankAccount(‘Котик’)
+cat.deposit(500)
+cat.withdraw(100)
+cat.get_history()
+
+dog = BankAccount(“Пёс‘’)
+dog.deposit(-200)
+dog.deposit(5000)
+dog.withdraw(2333)
+dog.get_history()
